@@ -19,7 +19,7 @@
 
 
 .button {
-    background-color: #4CAF50; /* Green */
+    background-color: #3da3d6; /* Green */
     border: none;
     color: white;
     padding: 15px 32px;
@@ -36,3 +36,13 @@
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
     cursor: pointer
     }
+
+.scanner{
+    height:50%;
+    width: 50%;
+}
+
+.warning{
+    color:rgb(245, 49, 49);
+    font-size:20px
+}

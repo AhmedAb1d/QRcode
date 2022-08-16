@@ -1,23 +1,28 @@
 import {useState} from 'react'
-import QrReader from 'react-qr-code'
+import {QrReader} from 'react-qr-reader'
+import Navbar from '../components/Navbar'
 
 function Scan(){
-    const [scanResultWebCam, setScanResultWebCam] =  useState('');
-    const handleErrorWebCam = (error) => {
-        console.log(error);
-      }
-      const handleScanWebCam = (result) => {
-        if (result){
-            setScanResultWebCam(result);
-        }
-       }
+    const [data, setData] = useState('No result');
+    
     return(
-        <QrReader
-        delay={300}
-        style={{width: '100%'}}
-        onError={handleErrorWebCam}
-        onScan={handleScanWebCam}
-        />
+        <div>
+            <Navbar/>
+            this is the scanning page
+            <QrReader
+        onResult={(result, error) => {
+          if (!!result) {
+            setData(result?.text);
+          }
+
+          if (!!error) {
+            console.info(error);
+          }
+        }}
+        style={{ width: '100%' }}
+      />
+      <p>{data}</p>
+        </div>
     )
 }
 

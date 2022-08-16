@@ -1,7 +1,7 @@
-import './App.css';
+import '../styles/App.css';
 import {useState} from 'react';
 import QRCode from 'react-qr-code';
-
+import Navbar from '../components/Navbar'
 function App() {
   const [firstname,setFirstname]=useState("");
   const [lastname,setLastname]=useState(""); 
@@ -23,6 +23,7 @@ function App() {
   }
   return (
     <div className="form">
+      <Navbar/>
       <input className="input" placeholder="Your Firstname" onChange={handleChange1}/><br></br>
       <input className="input" placeholder="Your Lastname" onChange={handleChange2}/><br></br>
       <button className="button" onClick={generate}>Generate QR code</button><br></br>
